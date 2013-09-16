@@ -7,14 +7,12 @@
 		<div class="row">
 			<div class="span8 push1">
 				<h2>About</h2>
-				<p>Mexico, the second largest economy in Latin America, has a national poverty rate of 46%, mainly in urban areas, and an extreme poverty rate of 10.7%.  The World Bank reminds us that poverty is the level of income or consumption that is not enough to provide a minimum amount of goods and services that include education, health care and shelter.  Meanwhile, extreme poverty represents the minimum food consumption that can sustain life.  Poverty has many dimensions that through the inability or difficulty to access resources, causes many to feel powerless and insecure.</p>
-
-				<h3>Mission</h3>
-				<p>Casa Caridad seeks to provide basic needs to impoverished people in the central part of Mexico.</p>		
+				<p>Mexico, the second largest economy in Latin America, has a national poverty rate of 46%, mainly in urban areas, and an extreme poverty rate of 10.7%.  While over half of the population lives impoverished, the wealthiest 10% represents 40% of the country’s income and consumption.  Because of this significant discrepancy of wealth, the country suffers from severe inequality.  Additionally, those in poverty often are unable or have a difficult time accessing resources which frequently, as a consequence, leads many feeling powerless or insecurity.</p>
 				<h3>Our Values</h3>
-				<p>We do our work through a great concern and respect for those we serve.  We know that the people we assist have faced injustice, often from the perils of corruption, and suffer from inequality, we are also witnesses to their feelings of powerlessness and inadequacy.  We believe in the need to give back to society by helping alleviate some of the burdens of the poor, who seek to live a life of dignity and hard work. </p>	
-
-				<p>While over half of Mexico’s population lives impoverished, the highest 10% represents 40% of the country’s income and consumption.  Because of this significant discrepancy in wealth, the country suffers from severe inequality.</p>		
+				<p>We have a great concern for the poor who are often forgotten in society, who have faced injustice, who suffer from inequality, who feel powerless and inadequate.</p>	
+				<p>We believe in the need to give back to those who are much less fortunate than us.  With great respect, we do this by trying to alleviate some of the burdens of the poor who seek to live a life of dignity and hard work.</p>
+				<h3>Mission</h3>
+				<p>Casa Caridad provides basic needs to impoverished people in the central part of Mexico.</p>		
 			</div>
 		</div>
 	</div>	
