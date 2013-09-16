@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
 	<meta charset="utf-8" />
 	<title>Casa Caridad &middot; Helping the indigent in Mexico</title>
-    <META NAME="Description" CONTENT="We provide basic needs to the indigent in Central Mexico">
+    <META NAME="Description" CONTENT="Casa cardidad ayuda y protege familias en el centro de México">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300|Signika' rel='stylesheet' type='text/css'>
@@ -26,14 +26,14 @@
 		</div>
 		<div class="row navigation">
 			<div class="span4">
-				<a href="index.php"><img src="img/casa-caridad-logo.png"></a>
+				<a href="index-es.php"><img src="img/casa-caridad-logo.png"></a>
 			</div>
 			<div class="span8 last" id="nav">
 				<ul>
-					<li><a href="about.php">About</a></li>
-					<li><a href="How-Casa-Caridad-works.php">How Does it work?</a></li>
-					<li><a href="Recipient-stories.php">Recipient Stories</a></li>
-					<li><a href="Donate.php">Donate</a></li>
+					<li><a href="intro.php">Introducción</a></li>
+					<li><a href="como-lo-hacemos.php">Como lo hacemos</a></li>
+					<li><a href="vidas-de-nuestros-recipientes.php">Nuestros recipientes</a></li>
+					<li><a href="donaciones.php">Donaciones</a></li>
 				</ul>
 			</div>
 		</div>
