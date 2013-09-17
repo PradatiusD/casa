@@ -31,9 +31,9 @@
 			<div class="span8 last" id="nav">
 				<ul>
 					<li><a href="about.php">About</a></li>
-					<li><a href="How-Casa-Caridad-works.php">How Does it work?</a></li>
+					<li><a href="how-casa-caridad-works.php">How Does it work?</a></li>
 					<li><a href="Recipient-stories.php">Recipient Stories</a></li>
-					<li><a href="Donate.php">Donate</a></li>
+					<li><a href="donate.php">Donate</a></li>
 				</ul>
 			</div>
 		</div>
