@@ -1,3 +1,3 @@
 Casa Caridad
 ====
-Project utilizing Boostrap 2.3.2, LESS
+Charity project utilizing Boostrap 2.3.2, LESS, and CoffeeScript.

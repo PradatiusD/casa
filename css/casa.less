@@ -1,6 +1,379 @@
 @import "bootstrap.min.css";  
 @import "bootstrap-responsive.min.css";
 
+/* ========================================== */
+/* CSS3 mixins from Chris Coyer of CSStricks  */
+/* ========================================== */
+
+.text-shadow (@string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
+    text-shadow: @string;
+}
+
+.box-shadow (@string) {
+    -webkit-box-shadow: @string;
+    -moz-box-shadow:    @string;
+    box-shadow:         @string;
+}
+.drop-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+    -webkit-box-shadow: @x @y @blur @spread rgba(0, 0, 0, @alpha);
+    -moz-box-shadow:    @x @y @blur @spread rgba(0, 0, 0, @alpha);
+    box-shadow:     @x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+.inner-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+    -webkit-box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+    -moz-box-shadow:    inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+    box-shadow:         inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+
+.box-sizing (@type: border-box) {
+    -webkit-box-sizing: @type;
+    -moz-box-sizing:    @type;
+    box-sizing:         @type;
+}
+
+.border-radius (@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius:    @radius;
+    border-radius:         @radius;
+
+    -moz-background-clip:    padding;
+    -webkit-background-clip: padding-box;
+    background-clip:         padding-box;
+}
+
+.border-radiuses (@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+    -webkit-border-top-right-radius:    @topright;
+    -webkit-border-bottom-right-radius: @bottomright;
+    -webkit-border-bottom-left-radius:  @bottomleft;
+    -webkit-border-top-left-radius:     @topleft;
+
+    -moz-border-radius-topright:        @topright;
+    -moz-border-radius-bottomright:     @bottomright;
+    -moz-border-radius-bottomleft:      @bottomleft;
+    -moz-border-radius-topleft:         @topleft;
+
+    border-top-right-radius:            @topright;
+    border-bottom-right-radius:         @bottomright;
+    border-bottom-left-radius:          @bottomleft;
+    border-top-left-radius:             @topleft;
+
+    -moz-background-clip:    padding; 
+    -webkit-background-clip: padding-box; 
+    background-clip:         padding-box; 
+}
+
+.opacity (@opacity: 0.5) {
+    -webkit-opacity:    @opacity;
+    -moz-opacity:       @opacity;
+    opacity:        @opacity;
+}
+
+.gradient (@startColor: #eee, @endColor: white) {
+    background-color: @startColor;
+    background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+    background: -webkit-linear-gradient(top, @startColor, @endColor);
+    background: -moz-linear-gradient(top, @startColor, @endColor);
+    background: -ms-linear-gradient(top, @startColor, @endColor);
+    background: -o-linear-gradient(top, @startColor, @endColor);
+}
+.horizontal-gradient (@startColor: #eee, @endColor: white) {
+    background-color: @startColor;
+    background-image: -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+    background-image: -webkit-linear-gradient(left, @startColor, @endColor);
+    background-image: -moz-linear-gradient(left, @startColor, @endColor);
+    background-image: -ms-linear-gradient(left, @startColor, @endColor);
+    background-image: -o-linear-gradient(left, @startColor, @endColor);
+}
+
+.animation (@name, @duration: 300ms, @delay: 0, @ease: ease) {
+    -webkit-animation: @name @duration @delay @ease;
+    -moz-animation:    @name @duration @delay @ease;
+    -ms-animation:     @name @duration @delay @ease;
+}
+
+.transition (@transition) {
+    -webkit-transition: @transition;  
+    -moz-transition:    @transition;
+    -ms-transition:     @transition; 
+    -o-transition:      @transition;  
+}
+.transform(@string){
+    -webkit-transform: @string;
+    -moz-transform:      @string;
+    -ms-transform:       @string;
+    -o-transform:        @string;
+}
+.scale (@factor) {
+    -webkit-transform: scale(@factor);
+    -moz-transform:      scale(@factor);
+    -ms-transform:       scale(@factor);
+    -o-transform:        scale(@factor);
+}
+.rotate (@deg) {
+    -webkit-transform: rotate(@deg);
+    -moz-transform:      rotate(@deg);
+    -ms-transform:       rotate(@deg);
+    -o-transform:        rotate(@deg);
+}
+.skew (@deg, @deg2) {
+    -webkit-transform:       skew(@deg, @deg2);
+    -moz-transform:      skew(@deg, @deg2);
+    -ms-transform:       skew(@deg, @deg2);
+    -o-transform:        skew(@deg, @deg2);
+}
+.translate (@x, @y:0) {
+    -webkit-transform:       translate(@x, @y);
+    -moz-transform:      translate(@x, @y);
+    -ms-transform:       translate(@x, @y);
+    -o-transform:        translate(@x, @y);
+}
+.translate3d (@x, @y: 0, @z: 0) {
+    -webkit-transform:       translate3d(@x, @y, @z);
+    -moz-transform:      translate3d(@x, @y, @z);
+    -ms-transform:       translate3d(@x, @y, @z);
+    -o-transform:        translate3d(@x, @y, @z);
+}
+.perspective (@value: 1000) {
+    -webkit-perspective:    @value;
+    -moz-perspective:   @value;
+    -ms-perspective:    @value;
+    perspective:        @value;
+}
+.transform-origin (@x:center, @y:center) {
+    -webkit-transform-origin: @x @y;
+    -moz-transform-origin:    @x @y;
+    -ms-transform-origin:     @x @y;
+    -o-transform-origin:      @x @y;
+}
+
+
+
+/* ========================================== */
+/* ! Color variables and site-specific mixins */
+/* ========================================== */
+
+@yellow: #f79d00;
+@transparent-blue:rgba(13, 34, 187, 0.75);
+
+.golden-hover {
+    .transition (color 0.3s);
+    &:hover {
+        color:@yellow;
+        text-decoration: none;
+    }
+}
+
+
+.fadeinhero {
+    animation: fadein 3s;
+    -moz-animation: fadein 3s; /* Firefox */
+    -webkit-animation: fadein 3s; /* Safari and Chrome */
+    -o-animation: fadein 3s; /* Opera */
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ========================================== */
+/* Regular LESS styling for site              */
+/* ========================================== */
+body {
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+
+#logo {
+    img {
+        .transition (all 0.3s);
+        position: relative;
+        -webkit-backface-visibility: hidden;
+        &:hover {
+            .scale(0.95);
+        }
+    }
+}
+
+.language {
+    text-align: right; 
+    margin:0.7em;
+    a {
+        font-size: 1.1em;
+        .golden-hover;
+    }
+}
+.topBanner {
+  background-image: url("top-banner.png");
+  height: 280px;
+  position: relative;
+  z-index: 1000;
+    .navigation {
+        margin-top:1.5em;
+        .span4 {
+            position: relative;
+            bottom: 7px;
+        }
+        ul {
+            margin-left:0;
+        }
+    }
+}
+
+#nav {
+    font-family: 'Signika';
+    font-size: 1.2em;
+    ul {
+        list-style-type: none;
+        li {
+            display: inline-block;
+            padding:2.2em;
+            a {
+                color:white;
+                .golden-hover;
+            }
+        }
+    }
+}
+
+.hero {
+    background-image: url("hero-background.png");
+    height: 518px;
+    position: relative;
+    z-index: 1;
+    bottom: 10px;
+    text-align: center;
+    h1, h2 {
+        color: white;
+        text-transform: uppercase;
+        font-weight: normal;
+        font-family: 'Lato', sans-serif;
+        line-height: 1em;
+        font-size: 3.5em;
+        .fadeinhero;      
+    }
+    h1 {
+        margin-top:3.5em;
+        font-weight: 300;
+    }
+    h2 {
+        font-weight:100;
+        span {
+            font-weight: 300;
+        }
+    }
+}
+
+.bottomBanner {
+    background-image: url("bottom-banner.png");
+    height: 270px;
+    position: relative;
+    bottom: 17px;
+    z-index: 1000;
+    color: white;
+    font-family: 'Signika';
+    text-align: center;
+    .people {
+        background-image: url("people.png");
+        margin-top: 1.01em;  
+    }
+    .overlay {
+        width: 50%;
+        margin: 1.5em auto 0 auto;
+        background: @transparent-blue;
+        padding: 4.0em 3em;
+        font-weight: normal;
+        font-size: 1.5em;
+        line-height: 0em;
+        h3 {
+            font-weight: normal;
+            a {
+                color:white;
+                .golden-hover;
+            }
+        }   
+    }
+}
+
+.about {
+  background-image: url("about-bg.jpg");
+  position: relative;
+  bottom: 10px; }
+
+.donate {
+  background-image: url("donate-bg.jpg");
+  position: relative;
+  bottom: 10px; }
+
+.donate-child {
+  background-image: url("donate-child.jpg");
+  position: relative;
+  bottom: 10px; }
+
+.recipients {
+    background-image: url("recipients.jpg");
+    position: relative;
+    bottom: 10px;
+}
+
+.content-page .span8.push1 {
+  background-color: @transparent-blue;
+  .fadeinhero;
+  font-family: 'signika';
+  color: rgba(255, 255, 255, 0.91);
+  font-weight: 300;
+  padding: 36px;
+    h2, h3 {
+        font-weight:400;
+    }
+    h2 {
+        font-size: 4em;
+        line-height: 1.5em;
+    }
+    h3 {
+        font-size: 2em;
+        margin-left: .5em;
+    }
+    p {
+        text-align: justify;
+        margin: 1em 1em;
+        font-size: 1.4em;
+        font-weight: 200;
+        font-family: Lato;
+        line-height: 1.2em; 
+    }
+}
+
+/* ========================================== */
+/* Mobile resolution displays and queries     */
+/* ========================================== */
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -29,137 +402,3 @@
 /* iPhone 4 ----------- */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
   /* Styles */ }
-
-.language {
-  text-align: right; }
-  .language a {
-    text-decoration: none;
-    font-size: 1em; }
-
-.topBanner {
-  background-image: url("top-banner.png");
-  height: 280px;
-  position: relative;
-  z-index: 1000;
-    .navigation {
-        margin-top:1.5em;
-        .span4 {
-            position: relative;
-            bottom: 7px;
-        }
-        ul {
-            margin-left:0;
-        }
-    }
-}
-
-#nav {
-  font-family: 'Signika';
-  font-size: 1.2em; }
-  #nav ul {
-    list-style-type: none; }
-  #nav a {
-    text-decoration: none; }
-  #nav li {
-    display: inline-block;
-    padding: 2.2em; }
-  #nav li a {
-    color: white; }
-
-.hero {
-  background-image: url("hero-background.png");
-  height: 518px;
-  position: relative;
-  z-index: 1;
-  bottom: 10px;
-  text-align: center; }
-  .hero h1, .hero h2 {
-    color: white;
-    text-transform: uppercase;
-    font-weight: normal;
-    font-family: 'Lato', sans-serif;
-    line-height: 1em;
-    font-size: 3.5em; }
-  .hero h1 {
-    margin-top: 3.5em;
-    font-weight: 300; }
-  .hero h2 {
-    font-weight: 100; }
-  .hero h2 span {
-    font-weight: 300; }
-
-.bottomBanner {
-  background-image: url("bottom-banner.png");
-  height: 270px;
-  position: relative;
-  bottom: 17px;
-  z-index: 1000;
-  color: white;
-  font-family: 'Signika';
-  text-align: center; }
-  .bottomBanner .people {
-    background-image: url("people.png");
-    margin-top: 1.01em; }
-  .bottomBanner .overlay {
-    width: 50%;
-    margin: 1.5em auto 0 auto;
-    background: rgba(0, 31, 255, 0.75);
-    padding: 4.0em 3em;
-    font-weight: normal;
-    font-size: 1.5em;
-    line-height: 0em; }
-    .bottomBanner .overlay h3 {
-      font-weight: normal; }
-    .bottomBanner .overlay a {
-      color: white; }
-
-.about {
-  background-image: url("about-bg.jpg");
-  position: relative;
-  bottom: 10px; }
-
-.donate {
-  background-image: url("donate-bg.jpg");
-  position: relative;
-  bottom: 10px; }
-
-.donate-child {
-  background-image: url("donate-child.jpg");
-  position: relative;
-  bottom: 10px; }
-
-.content-page .span8.push1 {
-  background-color: rgba(13, 34, 187, 0.75);
-  font-family: 'signika';
-  color: rgba(255, 255, 255, 0.91);
-  font-weight: 300;
-  padding: 36px;
-    h2 {
-        font-size: 4em;
-        line-height: 1.5em;
-    }
-    h3 {
-        font-size: 2em;
-        margin-left: .5em;
-    }
-    p {
-        text-align: justify;
-        margin: 1em 1em; 
-    }
-}
-
-.test {
-  color:black;
-}
-
-/* ============================= */
-/* ! Layout for mobile version   */
-/* ============================= */
-/* ========================================== */
-/* ! Provide higher res assets for iPhone 4   */
-/* ========================================== */
-@media only screen and (-webkit-min-device-pixel-ratio: 2) {
-  /*	.logo {
-  		background: url(logo2x.jpg) no-repeat;
-  		background-size: 212px 303px;
-  	}*/ }

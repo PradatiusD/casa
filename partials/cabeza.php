@@ -7,7 +7,7 @@
     <META NAME="Description" CONTENT="Casa cardidad ayuda y protege familias en el centro de México">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link href='http://fonts.googleapis.com/css?family=Lato:100,300|Signika' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300|Signika:400,300' rel='stylesheet' type='text/css'>
 	
 	<link rel="stylesheet/less" type="text/css" href="css/casa.less" />
 	<script src="js/less.js" type="text/javascript"></script>
@@ -26,7 +26,7 @@
 		</div>
 		<div class="row navigation">
 			<div class="span4">
-				<a href="index-es.php"><img src="img/casa-caridad-logo.png"></a>
+				<a href="index-es.php" id="logo"><img src="img/casa-caridad-logo.png"></a>
 			</div>
 			<div class="span8 last" id="nav">
 				<ul>

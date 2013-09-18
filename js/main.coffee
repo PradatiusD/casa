@@ -11,12 +11,12 @@ fixURLs = () ->
 			for i in spanishURLs
 				proposition = document.URL.indexOf(i) > 0
 				if proposition == true
-					window.location = "http://localhost/casa/"+ englishURLs[_i] + ".php"
+					window.location = "http://casacaridad.org/"+ englishURLs[_i] + ".php"
 		else 
 			for j in englishURLs
 				proposition = document.URL.indexOf(j) > 0
 				if proposition == true
-					window.location = "http://localhost/casa/"+ spanishURLs[_j] + ".php"
+					window.location = "http://casacaridad.org/"+ spanishURLs[_j] + ".php"
 
 
 		return false
