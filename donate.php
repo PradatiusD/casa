@@ -6,16 +6,127 @@
 		<div class="row">
 			<div class="span8 push1">
 				<h2>Donate</h2>
-				<p>Would you like to be part of our cause?  Donating $12.50 will help purchase one months supply of food for an impoverished family in Mexico.  Your donation raises money to purchase a bottle of olive oil, a bag of sugar, rice, beans, pasta, a bar of soap and a dozen eggs.</p>  
+				<p>Would you like to be part of our cause?  Donating $12.50 will help purchase one month supply of food for an impoverished family in Mexico.  Your donation raises money to purchase a bottle of olive oil, a bag of sugar, rice, beans, pasta, a bar of soap and a dozen eggs.</p>  
 				<p>You can also choose to donate $9.00 to help purchase a “tilma” blanket or four toys that will be distributed the first week of January.</p>
 				<h3>Get Involved</h3>
-				<p><a href="#">Donate Now (PayPal)</a></p>
-				<p><a href="#">Make a Recurring Donation</a></p>
+
+				 <p>Choose your Donation Amount</p>
+				 <div id="donationAmount">
+					 <a href="#" class="btn btn-warning btn-large">$12.50</a>
+					 <a href="#" class="btn btn-warning btn-large">$25.00</a>
+					 <a href="#" class="btn btn-warning btn-large">$37.50</a>
+					 <a href="#" class="btn btn-warning btn-large">$50.00</a>
+				 </div>
+				 <p>Or your own custom amount</p>
+				 <div>
+	 				<input type="text" class="input-large" id="customAmount" placeholder="$10.00">
+				 </div>
+				 <p>How often do you want to make your donation?</p>
+				 <div id="donationFrequency">
+					 <a href="#" class="btn btn-warning btn-large">One Time</a>
+					 <a href="#" class="btn btn-warning btn-large">Monthly</a>
+					 <a href="#" class="btn btn-warning btn-large">Quarterly</a>
+					 <a href="#" class="btn btn-warning btn-large">Annually</a>
+				 </div>
+				 <div>
+
+				<br>
+				<p>Thank you!  Click below on the donate button.  You will be taken to Paypal to process your donation.</p>
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="donationForm">
+					<!-- 	if subscriptions then cmd is _xclick-subscriptions
+						<input type="hidden" name="a3" value="5.00">  
+					    <input type="hidden" name="p3" value="1">  
+					    <input type="hidden" name="t3" value="M"> 
+				 	-->
+				 	<input type="hidden" name="a3" value="5.00">
+				 	<input type="hidden" name="p3" value="12">
+				 	<input type="hidden" name="t3" value="M">
+				 	<input type="hidden" name="src" value="1">
+					<input type="hidden" name="cmd" value="_donations">
+					<input type="hidden" name="item_name" value="Donate to Casa Caridad">  
+					<input TYPE="hidden" name="currency_code" value="USD">
+					<input TYPE="hidden" name="charset" value="utf-8">
+					<input type="hidden" name="amount" value="12.50">
+					<input type="hidden" name="business" value="info@casacaridad.org">  
+					<input TYPE="hidden" name="return" value="http://casacaridad.org">
+					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">				 	
+				 </div>
+
+				</form>
 			</div>
 		</div>
 	</div>
 </section>
+<script>
+// refer to https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
+	(function($){
 
+		var subscriptionAmount;
+
+		$('#donationAmount a, #donationFrequency a').click(function(e){
+
+			// For selecting amounts
+			e.preventDefault();
+
+			$(this).siblings().removeClass('btn-danger');
+			$(this).addClass('btn-danger');
+
+			var id = $(this).closest("div").attr("id");
+
+			// Change donation amount if it selected
+			if (id === "donationAmount") {
+				subscriptionAmount = $(this).text();
+
+				subscriptionAmount = subscriptionAmount.substring(1, subscriptionAmount.length);
+
+				$('input[name="amount"], input[name="a3"]').attr("value",subscriptionAmount);
+
+			}
+
+			buttonIndex = $(this).index();
+
+			// IF they click on subscription then change model to subscription
+			if (id === "donationFrequency" && buttonIndex>0) {
+
+				$('input[name="cmd"]').attr('value','_xclick-subscriptions');
+
+				$('input[name="a3"]').attr('value',subscriptionAmount);
+
+				if (buttonIndex === 1) {
+					$('input[name="t3"]').attr('value',"M");
+					$('input[name="p3"]').attr('value',"1");
+				}
+
+				if (buttonIndex === 2) {
+					$('input[name="t3"]').attr('value',"M");
+					$('input[name="p3"]').attr('value',"3");
+				}
+
+				if (buttonIndex === 3) {
+					$('input[name="t3"]').attr('value',"Y");
+					$('input[name="p3"]').attr('value',"1");
+				}
+
+			}
+			// If they switch back to one time donation
+			if (id === "donationFrequency" && buttonIndex === 0) {
+
+				$('input[name="cmd"]').attr('value','_donations');
+			}
+		})
+
+		// For custom typed subscription prices
+		
+		$( "#customAmount" ).keyup(function( event ) {
+
+			subscriptionAmount = $("#customAmount").val().replace("$",'');
+			console.log(subscriptionAmount)
+			$('input[name="a3"]').attr('value',subscriptionAmount);
+		})
+
+	})(jQuery)
+</script>
 <?php
 	include 'partials/footer.php'; 
 ?>

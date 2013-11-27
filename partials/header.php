@@ -11,7 +11,8 @@
 	
 	<link rel="stylesheet/less" type="text/css" href="css/casa.less" />
 	<script src="js/less.js" type="text/javascript"></script>
-	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
 	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
 	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
 	
