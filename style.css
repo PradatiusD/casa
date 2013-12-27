@@ -217,23 +217,7 @@ body {
   color: #f79d00;
   text-decoration: none;
 }
-.about {
-  background-image: url("css/about-bg.jpg");
-  position: relative;
-  bottom: 10px;
-}
-.donate {
-  background-image: url("css/donate-bg.jpg");
-  position: relative;
-  bottom: 10px;
-}
-.donate-child {
-  background-image: url("css/donate-child.jpg");
-  position: relative;
-  bottom: 10px;
-}
-.recipients {
-  background-image: url("css/recipients.jpg");
+.content-background {
   position: relative;
   bottom: 10px;
 }

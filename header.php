@@ -3,16 +3,14 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Casa Caridad &middot; Helping the indigent in Mexico</title>
-    <META NAME="Description" CONTENT="We provide basic needs to the indigent in Central Mexico">
-
+    <META name="Description" content="We provide basic needs to the indigent in Central Mexico">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300|Signika:400,300' rel='stylesheet' type='text/css'>
-	
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap-responsive.min.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	
+	<?php wp_head(); ?>
 </head>
 <body>
 <header class="topBanner">
