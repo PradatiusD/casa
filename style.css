@@ -13,3 +13,300 @@ Text Domain: casacaridad
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+/* ========================================== */
+/* CSS3 mixins from Chris Coyer of CSStricks  */
+/* ========================================== */
+/* ========================================== */
+/* ! Color variables and site-specific mixins */
+/* ========================================== */
+.golden-hover {
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  -ms-transition: color 0.3s;
+  -o-transition: color 0.3s;
+}
+.golden-hover:hover {
+  color: #f79d00;
+  text-decoration: none;
+}
+.fadeinhero {
+  animation: fadein 3s;
+  -moz-animation: fadein 3s;
+  /* Firefox */
+  -webkit-animation: fadein 3s;
+  /* Safari and Chrome */
+  -o-animation: fadein 3s;
+  /* Opera */
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* ========================================== */
+/* Regular LESS styling for site              */
+/* ========================================== */
+body {
+  -webkit-transform: translate3d(0, 0, 0);
+}
+#logo img {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  position: relative;
+  -webkit-backface-visibility: hidden;
+}
+#logo img:hover {
+  -webkit-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  -o-transform: scale(0.95);
+}
+.language {
+  text-align: right;
+  margin: 0.7em;
+}
+.language a {
+  font-size: 1.1em;
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  -ms-transition: color 0.3s;
+  -o-transition: color 0.3s;
+}
+.language a:hover {
+  color: #f79d00;
+  text-decoration: none;
+}
+.topBanner {
+  background-image: url("css/top-banner.png");
+  height: 280px;
+  position: relative;
+  z-index: 1000;
+}
+.topBanner .navigation {
+  margin-top: 1.5em;
+}
+.topBanner .navigation .span4 {
+  position: relative;
+  bottom: 7px;
+}
+.topBanner .navigation ul {
+  margin-left: 0;
+}
+#nav {
+  font-family: 'Signika';
+  font-size: 1.2em;
+}
+#nav ul {
+  list-style-type: none;
+}
+#nav ul li {
+  display: inline-block;
+  padding: 2.2em;
+}
+#nav ul li a {
+  color: white;
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  -ms-transition: color 0.3s;
+  -o-transition: color 0.3s;
+}
+#nav ul li a:hover {
+  color: #f79d00;
+  text-decoration: none;
+}
+.hero {
+  background-image: url("css/hero-background.png");
+  height: 518px;
+  position: relative;
+  z-index: 1;
+  bottom: 10px;
+  text-align: center;
+}
+.hero h1,
+.hero h2 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-family: 'Lato', sans-serif;
+  line-height: 1em;
+  font-size: 3.5em;
+  animation: fadein 3s;
+  -moz-animation: fadein 3s;
+  /* Firefox */
+  -webkit-animation: fadein 3s;
+  /* Safari and Chrome */
+  -o-animation: fadein 3s;
+  /* Opera */
+}
+.hero h1 {
+  margin-top: 3.5em;
+  font-weight: 300;
+}
+.hero h2 {
+  font-weight: 100;
+}
+.hero h2 span {
+  font-weight: 300;
+}
+.bottomBanner {
+  background-image: url("css/bottom-banner.png");
+  height: 270px;
+  position: relative;
+  bottom: 17px;
+  z-index: 1000;
+  color: white;
+  font-family: 'Signika';
+  text-align: center;
+}
+.bottomBanner .people {
+  background-image: url("css/people.png");
+  margin-top: 1.01em;
+}
+.bottomBanner .overlay {
+  width: 50%;
+  margin: 1.5em auto 0 auto;
+  background: rgba(13, 34, 187, 0.75);
+  padding: 4.0em 3em;
+  font-weight: normal;
+  font-size: 1.5em;
+  line-height: 0em;
+}
+.bottomBanner .overlay h3 {
+  font-weight: normal;
+}
+.bottomBanner .overlay h3 a {
+  color: white;
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  -ms-transition: color 0.3s;
+  -o-transition: color 0.3s;
+}
+.bottomBanner .overlay h3 a:hover {
+  color: #f79d00;
+  text-decoration: none;
+}
+.about {
+  background-image: url("css/about-bg.jpg");
+  position: relative;
+  bottom: 10px;
+}
+.donate {
+  background-image: url("css/donate-bg.jpg");
+  position: relative;
+  bottom: 10px;
+}
+.donate-child {
+  background-image: url("css/donate-child.jpg");
+  position: relative;
+  bottom: 10px;
+}
+.recipients {
+  background-image: url("css/recipients.jpg");
+  position: relative;
+  bottom: 10px;
+}
+.content-page .span8.push1 {
+  background-color: rgba(13, 34, 187, 0.75);
+  animation: fadein 3s;
+  -moz-animation: fadein 3s;
+  /* Firefox */
+  -webkit-animation: fadein 3s;
+  /* Safari and Chrome */
+  -o-animation: fadein 3s;
+  /* Opera */
+  font-family: 'signika';
+  color: rgba(255, 255, 255, 0.91);
+  font-weight: 300;
+  padding: 36px;
+}
+.content-page .span8.push1 h2,
+.content-page .span8.push1 h3 {
+  font-weight: 400;
+}
+.content-page .span8.push1 h2 {
+  font-size: 4em;
+  line-height: 1.5em;
+}
+.content-page .span8.push1 h3 {
+  font-size: 2em;
+  margin-left: .5em;
+}
+.content-page .span8.push1 p {
+  text-align: justify;
+  margin: 1em 1em;
+  font-size: 1.4em;
+  font-weight: 200;
+  font-family: Lato;
+  line-height: 1.2em;
+}
+/* ========================================== */
+/* Mobile resolution displays and queries     */
+/* ========================================== */
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* Styles */
+}
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) {
+  /* Styles */
+}
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+  /* Styles */
+}
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Styles */
+}
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* Styles */
+}
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* Styles */
+}
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  /* Styles */
+}
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) {
+  /* Styles */
+}
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /* Styles */
+}

@@ -1,19 +1,27 @@
 <?php
-	include 'partials/header.php'; 
+	get_header();
 ?>
 
 <section class="hero">
 	<div class="container">
 		<div class="row">
 			<div class="span12">
-					<h1>Casa Caridad</h1>
-					<h2>provides basic needs to</h2>
-					<h2>the indigent in <span>central  Mexico.</span></h2>				
+				<?php 
+					if ( have_posts() ) {
+						while ( have_posts() ) {
+							the_post(); 
+							//
+							the_title();
+							the_content();
+							//
+						} // end while
+					} // end if
+				?>			
 			</div>
 		</div>
 	</div>	
 </section>
 
 <?php
-	include 'partials/footer.php'; 
+	get_footer();
 ?>
